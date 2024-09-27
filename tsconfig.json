@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "types": ["office-js"],
     "target": "es5",
     "lib": [
       "dom",

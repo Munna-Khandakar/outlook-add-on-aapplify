@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@microsoft/office-js": "^1.1.93",
+    "@microsoft/office-js-helpers": "^1.0.2",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -10,6 +12,7 @@
     "@types/node": "^16.18.111",
     "@types/react": "^18.3.9",
     "@types/react-dom": "^18.3.0",
+    "office-ui-fabric-js": "^1.5.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-scripts": "5.0.1",
@@ -39,5 +42,12 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/office-js": "^1.0.427",
+    "@types/office-runtime": "^1.0.35",
+    "office-addin-debugging": "^5.1.5",
+    "office-addin-dev-certs": "^1.13.4",
+    "office-toolbox": "^0.3.0"
   }
 }
