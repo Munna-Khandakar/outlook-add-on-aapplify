@@ -20,7 +20,7 @@ function App() {
     }, [officeTheme]);
 
     return (
-        <div className="h-screen px-2 bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-gray-200">
+        <div className="h-screen px-4 py-2 bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-gray-200">
             {
                 isOfficeInitialized ?
                     <WelcomePage
