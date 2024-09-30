@@ -15,7 +15,7 @@ export const EmailGenerator = (props:EmailGeneratorProps) => {
 
     return (
         <div className="flex flex-col h-screen">
-            <div className="flex-grow">
+            <div className="flex-grow overflow-y-auto">
                 {
                     suggestionsResponse.length > 0
                         ? <EmailSuggestions
