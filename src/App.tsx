@@ -14,8 +14,6 @@ function App() {
             } else {
                 document.documentElement.classList.add('light')
             }
-        } else {
-            document.documentElement.classList.add('dark')
         }
     }, [officeTheme, isOfficeInitialized]);
 
