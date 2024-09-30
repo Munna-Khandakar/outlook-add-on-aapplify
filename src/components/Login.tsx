@@ -37,12 +37,10 @@ export const Login = (props: LoginProps) => {
     const [isPopoverOpen, setIsPopoverOpen] = useState(false);
 
     const onSubmit: SubmitHandler<LoginFormInput> = (data) => {
-        api.post('/auth/token', data).then((response) => {
-            // console.log(response.data);
+        api.post('/auth/token/', data).then((response) => {
+            setToken(response.data.access);
         }).catch((error) => {
-            // console.log(error.response.data.message);
-        }).finally(() => {
-            setToken('token');
+            console.log(error.response.data);
         });
     };
 

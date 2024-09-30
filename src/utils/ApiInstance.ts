@@ -11,12 +11,7 @@ interface ApiInstance extends AxiosInstance {
 const backend_url: string = 'https://aaplify.logicmatrixllc.com';
 
 const api: ApiInstance = axios.create({
-    baseURL: `${backend_url}/api`,
-    headers: {
-        'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': '*',
-        'ngrok-skip-browser-warning': 'true',
-    },
+    baseURL: `${backend_url}/`,
 });
 
 api.interceptors.request.use(

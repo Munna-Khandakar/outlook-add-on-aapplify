@@ -18,7 +18,7 @@ export const EmailPrompt = (props: EmailPromptProps) => {
     } = useForm<EmailPromptInput>();
 
     const onSubmit: SubmitHandler<EmailPromptInput> = (data) => {
-        api.post('/service-email/generate-email', data).then((response) => {
+        api.post('/api/service-email/generate-email/', data).then((response) => {
             // console.log(response.data);
         }).catch((error) => {
             // console.log(error.response.data.message);
