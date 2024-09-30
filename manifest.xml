@@ -6,7 +6,7 @@
   <DefaultLocale>en-US</DefaultLocale>
   <DisplayName DefaultValue="Aapplify"/>
   <Description DefaultValue="Your daily email partner."/>
-  <IconUrl DefaultValue="https://aapplify.vercel.app/assets/main.png"/>
+  <IconUrl DefaultValue="https://aapplify.vercel.app/assets/icon.png"/>
   <HighResolutionIconUrl DefaultValue="https://aapplify.vercel.app/assets/main.png"/>
   <SupportUrl DefaultValue="https://aaplify.logicmatrixllc.com/"/>
   <AppDomains>
@@ -70,7 +70,7 @@
       </Hosts>
       <Resources>
         <bt:Images>
-          <bt:Image id="Icon.16x16" DefaultValue="https://aapplify.vercel.app/assets/main.png"/>
+          <bt:Image id="Icon.16x16" DefaultValue="https://aapplify.vercel.app/assets/icon.png"/>
           <bt:Image id="Icon.32x32" DefaultValue="https://aapplify.vercel.app/assets/main.png"/>
           <bt:Image id="Icon.80x80" DefaultValue="https://aapplify.vercel.app/assets/main.png"/>
         </bt:Images>
