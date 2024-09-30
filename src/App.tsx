@@ -17,7 +17,7 @@ function App() {
         } else {
             document.documentElement.classList.add('dark')
         }
-    }, [officeTheme]);
+    }, [officeTheme, isOfficeInitialized]);
 
     return (
         <div className="h-screen px-2 py-1 bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-gray-200">
