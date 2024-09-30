@@ -8,13 +8,14 @@ function App() {
 
     useEffect(() => {
         if (officeTheme) {
-            console.log(officeTheme);
             if (officeTheme.bodyBackgroundColor === '#212121') {
                 //dark theme
                 document.documentElement.classList.add('dark')
             } else {
                 document.documentElement.classList.add('light')
             }
+        }else{
+            document.documentElement.classList.add('dark')
         }
     }, [officeTheme]);
 

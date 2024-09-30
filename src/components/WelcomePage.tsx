@@ -10,7 +10,7 @@ type WelcomePageProps = {
 export const WelcomePage = (props: WelcomePageProps) => {
 
     const {userProfile} = props;
-    const {token, setToken} = useAuthContext();
+    const {token, setToken,removeToken} = useAuthContext();
 
     return (
         <Fragment>
@@ -20,7 +20,9 @@ export const WelcomePage = (props: WelcomePageProps) => {
                         userProfile={userProfile}
                         setToken={setToken}
                     />
-                    : <EmailGenerator/>
+                    : <EmailGenerator
+                        removeToken={removeToken}
+                    />
             }
         </Fragment>
     );
