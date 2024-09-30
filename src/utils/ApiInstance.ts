@@ -29,8 +29,8 @@ api.interceptors.request.use(
 
 const refreshToken = async () => {
     try {
-        const response = await axios.post(`${backend_url}/api/auth/refresh-token`, {
-            'refreshToken': AuthUtil.getRefreshToken(),
+        const response = await axios.post(`${backend_url}/auth/token/refresh`, {
+            'refresh': AuthUtil.getRefreshToken(),
         });
         AuthUtil.setToken(response.data.accessToken);
         AuthUtil.setRefreshToken(response.data.refreshToken);
