@@ -1,6 +1,6 @@
-import { useState } from 'react';
-import { useForm, SubmitHandler } from "react-hook-form";
-import { LoginFormInput } from "../types/LoginFormInput";
+import {useState} from 'react';
+import {useForm, SubmitHandler} from "react-hook-form";
+import {LoginFormInput} from "../types/LoginFormInput";
 import api from "../utils/ApiInstance";
 
 type LoginProps = {
@@ -8,7 +8,7 @@ type LoginProps = {
     setToken: (token: string) => void;
 }
 
-const TermsPopover = ({ onClose }: { onClose: () => void }) => (
+const TermsPopover = ({onClose}: { onClose: () => void }) => (
     <div className="fixed inset-0 flex items-center justify-center z-50">
         <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-lg max-w-md w-full">
             <h2 className="text-lg font-bold mb-2">Terms and Conditions</h2>
@@ -26,8 +26,8 @@ const TermsPopover = ({ onClose }: { onClose: () => void }) => (
 );
 
 export const Login = (props: LoginProps) => {
-    const { userProfile, setToken } = props;
-    const { register, handleSubmit, formState: { errors, isSubmitting } } = useForm<LoginFormInput>({
+    const {userProfile, setToken} = props;
+    const {register, handleSubmit, formState: {errors, isSubmitting}} = useForm<LoginFormInput>({
         defaultValues: {
             email: userProfile?.emailAddress,
             password: '',
@@ -47,7 +47,7 @@ export const Login = (props: LoginProps) => {
     return (
         <div>
             <h1 className="text-lg font-bold py-4 text-center">
-                Welcome {userProfile?.displayName} to Aapplify
+                Welcome to Aapplify
             </h1>
             <p className="text-sm my-2 text-center">Please Login to your account</p>
             <form onSubmit={handleSubmit(onSubmit)}>
@@ -61,7 +61,7 @@ export const Login = (props: LoginProps) => {
                         id="email"
                         className={`bg-gray-50 border text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 ${errors.email ? 'border-red-500' : 'border-gray-300 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'}`}
                         placeholder="aapplify@gmail.com"
-                        {...register('email', { required: 'Email is required' })}
+                        {...register('email', {required: 'Email is required'})}
                     />
                     {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email.message}</p>}
                 </div>
@@ -75,7 +75,7 @@ export const Login = (props: LoginProps) => {
                         id="password"
                         className={`bg-gray-50 border text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 ${errors.password ? 'border-red-500' : 'border-gray-300 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'}`}
                         placeholder="Password"
-                        {...register('password', { required: 'Password is required' })}
+                        {...register('password', {required: 'Password is required'})}
                     />
                     {errors.password && <p className="text-red-500 text-xs mt-1">{errors.password.message}</p>}
                 </div>
@@ -94,7 +94,7 @@ export const Login = (props: LoginProps) => {
             >
                 Our terms and condition
             </p>
-            {isPopoverOpen && <TermsPopover onClose={() => setIsPopoverOpen(false)} />}
+            {isPopoverOpen && <TermsPopover onClose={() => setIsPopoverOpen(false)}/>}
         </div>
     );
 }

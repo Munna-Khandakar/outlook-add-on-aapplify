@@ -1,7 +1,7 @@
+import {Fragment, useState} from "react";
 import {SubmitHandler, useForm} from "react-hook-form";
 import api from "../utils/ApiInstance";
 import {EmailPromptInput} from "../types/EmailPrompt";
-import {Fragment, useState} from "react";
 
 type EmailPromptProps = {
     setSuggestionsResponse: (response: string[]) => void;
@@ -15,17 +15,16 @@ export const EmailPrompt = (props: EmailPromptProps) => {
     const {
         register,
         handleSubmit,
-        formState: {errors, isSubmitting},
+        reset,
+        formState: {isSubmitting},
     } = useForm<EmailPromptInput>();
 
     const onSubmit: SubmitHandler<EmailPromptInput> = (data) => {
         api.post('/api/service-email/generate-email/', data).then((response) => {
-            console.log(response.data);
             setSuggestionsResponse(response.data.prompt)
         }).catch((error) => {
-            console.log(error.response.data);
+            reset();
             setAlertMessage(error.response.data.error)
-            console.log(error.response.data);
         });
     };
 
@@ -33,7 +32,6 @@ export const EmailPrompt = (props: EmailPromptProps) => {
         <Fragment>
             {
                 alertMessage &&
-
                 <div
                     className="flex items-center p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-blue-400"
                     role="alert">

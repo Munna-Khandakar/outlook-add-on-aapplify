@@ -1,7 +1,7 @@
 import {useState} from "react";
+import {motion} from "framer-motion";
 import {EmailPrompt} from "./EmailPrompt";
 import {EmailSuggestions} from "./EmailSuggestions";
-import {motion} from "framer-motion";
 
 type EmailGeneratorProps = {
     removeToken: () => void;
