@@ -32,7 +32,7 @@ export const EmailPrompt = (props: EmailPromptProps) => {
     };
 
     return (
-        <form onSubmit={handleSubmit(onSubmit)} className="py-4">
+        <form onSubmit={handleSubmit(onSubmit)} className="py-4 px-2">
             <label htmlFor="prompt" className="block mb-2 text-lg font-bold text-gray-900 dark:text-white">Your
                 Prompt</label>
             <textarea id="prompt" rows={8}
