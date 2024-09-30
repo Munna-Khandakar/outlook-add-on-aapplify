@@ -12,7 +12,8 @@ export const EmailSuggestions = (props: EmailSuggestionsProps) => {
         <div>
             <h1 className="text-lg font-bold py-4">Suggestions</h1>
 
-            <div className="flex flex-col gap-2 overflow-auto">
+            <div className="flex flex-col gap-2 h-[35rem] overflow-y-scroll"
+            >
                 {
                     suggestionsResponse.map((suggestion, index) => (
                         <EmailSuggestionCard

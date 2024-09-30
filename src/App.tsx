@@ -14,7 +14,7 @@ function App() {
             } else {
                 document.documentElement.classList.add('light')
             }
-        }else{
+        } else {
             document.documentElement.classList.add('dark')
         }
     }, [officeTheme]);
@@ -22,13 +22,12 @@ function App() {
     return (
         <div className="h-screen px-2 bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-gray-200">
             {
-                isOfficeInitialized ? (
+                isOfficeInitialized ?
                     <WelcomePage
                         userProfile={userProfile}
                     />
-                ) : (
+                    :
                     <h1>Loading...</h1>
-                )
             }
         </div>
     );

@@ -3,7 +3,6 @@ import ReactDOM from "react-dom/client";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import {OfficeProvider} from "./contexts/OfficeContext";
-import "./index.css";
 import {AuthProvider} from "./contexts/AuthContext";
 
 const root = ReactDOM.createRoot(
