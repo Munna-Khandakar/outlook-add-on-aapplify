@@ -1,7 +1,6 @@
-import {useOfficeContext} from "./contexts/OfficeContext";
-import "./App.css";
-import {WelcomePage} from "./components/WelcomePage";
 import {useEffect} from "react";
+import {useOfficeContext} from "./contexts/OfficeContext";
+import {WelcomePage} from "./components/WelcomePage";
 
 function App() {
 
@@ -10,21 +9,17 @@ function App() {
     useEffect(() => {
         if (officeTheme) {
             console.log(officeTheme);
-            document.documentElement.classList.add('dark')
-        }else{
-            console.log('no theme');
-            document.documentElement.classList.add('dark')
+            if (officeTheme.bodyBackgroundColor === '#212121') {
+                //dark theme
+                document.documentElement.classList.add('dark')
+            } else {
+                document.documentElement.classList.add('light')
+            }
         }
     }, [officeTheme]);
 
     return (
-        <div
-            className="h-screen px-2 bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-gray-200"
-            style={{
-                background: officeTheme?.bodyBackgroundColor,
-                color: officeTheme?.bodyForegroundColor,
-            }}
-        >
+        <div className="h-screen px-2 bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-gray-200">
             {
                 isOfficeInitialized ? (
                     <WelcomePage
@@ -34,7 +29,6 @@ function App() {
                     <h1>Loading...</h1>
                 )
             }
-
         </div>
     );
 }

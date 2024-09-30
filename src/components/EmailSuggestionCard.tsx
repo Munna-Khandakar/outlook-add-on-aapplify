@@ -42,7 +42,7 @@ export const EmailSuggestionCard = (props: EmailSuggestionCardProps) => {
     }
 
     return (
-        <div className="p-4 bg-slate-200 dark:bg-slate-800 text-slate-900 dark:text-gray-200 rounded-md">
+        <div className="p-4 bg-slate-200 text-xs dark:bg-slate-800 text-slate-900 dark:text-gray-200 rounded-md">
             {suggestion}
             <div>
                 <motion.button
