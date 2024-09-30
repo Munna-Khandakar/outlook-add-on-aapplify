@@ -3,37 +3,40 @@ import {LoginFormInput} from "../types/LoginFormInput";
 import api from "../utils/ApiInstance";
 
 type LoginProps = {
-    defaultUserEmail: string | undefined;
+    userProfile: Office.UserProfile | undefined;
     setToken: (token: string) => void;
 }
 
 export const Login = (props: LoginProps) => {
-    const {defaultUserEmail, setToken} = props;
+    const {userProfile, setToken} = props;
     const {
         register,
         handleSubmit,
         formState: {errors, isSubmitting},
     } = useForm<LoginFormInput>({
         defaultValues: {
-            email: defaultUserEmail,
+            email: userProfile?.emailAddress,
             password: '',
         },
     });
 
     const onSubmit: SubmitHandler<LoginFormInput> = (data) => {
-        api.post('/login', data).then((response) => {
-            setToken('token');
-            // console.log(response.data);
+        api.post('/auth/token', data).then((response) => {
+            // setToken('token');
+             console.log(response.data);
         }).catch((error) => {
             // console.log(error.response.data.message);
         }).finally(() => {
             // console.log('finally');
-            setToken('token');
+             setToken('token');
         });
     };
 
     return (
-        <div className="max-w-sm mx-auto">
+        <div>
+            <h1 className="text-lg font-bold py-4 text-center">
+                Welcome {userProfile?.displayName} to Aapplify
+            </h1>
             <p className="text-sm my-2 text-center">Please Login to your account</p>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="mb-5">
@@ -70,7 +73,8 @@ export const Login = (props: LoginProps) => {
                             className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800"
                         />
                     </div>
-                    <label htmlFor="remember" className="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Remember me</label>
+                    <label htmlFor="remember" className="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Remember
+                        me</label>
                 </div>
                 <button
                     type="submit"
