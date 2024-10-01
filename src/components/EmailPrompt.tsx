@@ -21,7 +21,7 @@ export const EmailPrompt = (props: EmailPromptProps) => {
 
     const onSubmit: SubmitHandler<EmailPromptInput> = (data) => {
         api.post('/api/service-email/generate-email/', data).then((response) => {
-            setSuggestionsResponse(response.data.prompt)
+            setSuggestionsResponse(response.data.response)
         }).catch((error) => {
             reset();
             setAlertMessage(error.response.data.error)
